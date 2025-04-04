@@ -1,6 +1,6 @@
 {
   "title": "כותרת השאלון",
-  "displayMode": "detailed",
+  "displayMode": "scale", //Or "scale"
   "scaleOptions": [
     "דומה לחלוטין",
     "דומה",
