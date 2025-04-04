@@ -1385,6 +1385,12 @@
                     downloadResults();
                 });
                 
+                // מאזין לכפתור חזרה למסך הכניסה
+                document.getElementById('back-to-user-enter-btn').addEventListener('click', function() {
+                    questionnairePanel.classList.add('hidden');
+                    userEnterPanel.classList.remove('hidden');
+                });
+                
                 // בדיקה אם יש קוד בפרמטרים של הURL
                 checkUrlForShareCode();
             }
