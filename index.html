@@ -992,11 +992,13 @@
                 document.getElementById('progress-bar-fill').style.width = `${progressPercent}%`;
                 document.getElementById('progress-text').textContent = `${answeredCount}/${NUM_ITEMS}`;
                 
-                // הפעלת כפתור ההורדה אם הושלם הכל
+                // הפעלת כפתורי ההורדה והניתוח אם הושלם הכל
                 if (answeredCount === NUM_ITEMS) {
                     document.getElementById('download-results-btn').classList.remove('hidden');
+                    document.getElementById('ai-analysis-btn').classList.remove('hidden');
                 } else {
                     document.getElementById('download-results-btn').classList.add('hidden');
+                    document.getElementById('ai-analysis-btn').classList.add('hidden');
                 }
             }
             
@@ -1020,6 +1022,7 @@
                 const prevBtn = document.getElementById('prev-item-btn');
                 const nextBtn = document.getElementById('next-item-btn');
                 const downloadBtn = document.getElementById('download-results-btn');
+                const aiAnalysisBtn = document.getElementById('ai-analysis-btn');
                 
                 // כפתור קודם
                 if (currentItemIndex > 0) {
@@ -1032,15 +1035,18 @@
                 if (currentItemIndex === NUM_ITEMS - 1) {
                     nextBtn.classList.add('hidden');
                     
-                    // הצגת כפתור הורדה אם כל השאלות מולאו
+                    // הצגת כפתורי הורדה וניתוח אם כל השאלות מולאו
                     if (userAnswers.every(ans => ans !== null)) {
                         downloadBtn.classList.remove('hidden');
+                        aiAnalysisBtn.classList.remove('hidden');
                     } else {
                         downloadBtn.classList.add('hidden');
+                        aiAnalysisBtn.classList.add('hidden');
                     }
                 } else {
                     nextBtn.classList.remove('hidden');
                     downloadBtn.classList.add('hidden');
+                    aiAnalysisBtn.classList.add('hidden');
                 }
             }
             
