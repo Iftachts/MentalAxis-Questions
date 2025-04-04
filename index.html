@@ -479,6 +479,29 @@
                     <button id="download-results-btn" class="button-primary hidden">
                         <i class="fas fa-download ml-1"></i>הורד תוצאות
                     </button>
+                    <button id="ai-analysis-btn" class="button-primary hidden">
+                        <i class="fas fa-robot ml-1"></i>קבל ניתוח מבינה מלאכותית
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- מסך ניתוח AI -->
+        <div id="ai-analysis-panel" class="hidden">
+            <div class="mb-4">
+                <button id="back-to-questionnaire-from-ai-btn" class="button-secondary mb-4">
+                    <i class="fas fa-arrow-right ml-1"></i>חזרה לשאלון
+                </button>
+            </div>
+            
+            <div class="card">
+                <h2 class="text-xl font-semibold mb-4">ניתוח מבינה מלאכותית</h2>
+                
+                <div id="ai-analysis-content" class="prose max-w-none">
+                    <div class="text-center">
+                        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+                        <p>מנתח את התשובות שלך...</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1616,8 +1639,136 @@
                 }
             });
             
+            // מאזין להעלאת קובץ חד פעמי
+            document.getElementById('one-time-import-file').addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+                
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const data = JSON.parse(e.target.result);
+                        
+                        // בדיקת תקינות מבנה הקובץ
+                        if (!validateQuestionnaireData(data)) {
+                            showNotification('מבנה הקובץ אינו תקין');
+                            return;
+                        }
+                        
+                        // הצגת תצוגה מקדימה
+                        displayOneTimePreview(data);
+                        
+                        // הצגת כפתור התחלת השאלון
+                        const startButton = document.getElementById('start-one-time-questionnaire-btn');
+                        startButton.classList.remove('hidden');
+                        
+                    } catch (err) {
+                        console.error(err);
+                        showNotification('שגיאה בטעינת הקובץ');
+                    }
+                };
+                reader.onerror = function() {
+                    showNotification('שגיאה בקריאת הקובץ');
+                };
+                reader.readAsText(file);
+            });
+
+            // מאזין לכפתור התחלת שאלון חד פעמי
+            document.getElementById('start-one-time-questionnaire-btn').addEventListener('click', function() {
+                const previewContent = document.getElementById('one-time-preview-content');
+                if (!previewContent.dataset.questionnaireData) {
+                    showNotification('לא נמצאו נתוני שאלון לטעינה');
+                    return;
+                }
+
+                try {
+                    const data = JSON.parse(previewContent.dataset.questionnaireData);
+                    
+                    // שמירת הנתונים זמנית
+                    currentQuestionnaireData = data;
+                    
+                    // איפוס מיקום בשאלון
+                    currentItemIndex = 0;
+                    
+                    // יצירת פריטי השאלון
+                    createQuestionnaireItems(data);
+                    
+                    // איפוס פס ההתקדמות
+                    updateProgressBar();
+                    
+                    // עדכון כפתורי הניווט
+                    updateNavigationButtons();
+                    
+                    // מעבר למסך השאלון
+                    oneTimePanel.classList.add('hidden');
+                    questionnairePanel.classList.remove('hidden');
+                    
+                    showNotification('השאלון נטען בהצלחה');
+                } catch (err) {
+                    console.error(err);
+                    showNotification('שגיאה בעיבוד נתוני השאלון');
+                }
+            });
+            
             // אתחול
             initializeApp();
+            
+            // מאזין לכפתור ניתוח AI
+            document.getElementById('ai-analysis-btn').addEventListener('click', async function() {
+                if (!userAnswers.every(ans => ans !== null)) {
+                    showNotification('נא למלא את כל הפריטים לפני קבלת ניתוח');
+                    return;
+                }
+                
+                // יצירת תוכן הקובץ
+                let fileContent = `${currentQuestionnaireData.title}\n\n`;
+                
+                userAnswers.forEach((answerIndex, itemIndex) => {
+                    // הוספת ההיגד שנבחר
+                    const selectedOption = currentQuestionnaireData.items[itemIndex].options[answerIndex];
+                    fileContent += `${selectedOption}\n`;
+                });
+                
+                // מעבר למסך הניתוח
+                questionnairePanel.classList.add('hidden');
+                document.getElementById('ai-analysis-panel').classList.remove('hidden');
+                
+                try {
+                    // שליחת הנתונים ל-Claude
+                    const response = await fetch('https://api.anthropic.com/v1/messages', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'x-api-key': 'YOUR_ANTHROPIC_API_KEY', // יש להחליף במפתח API אמיתי
+                            'anthropic-version': '2023-06-01'
+                        },
+                        body: JSON.stringify({
+                            model: 'claude-3-sonnet-20240229',
+                            max_tokens: 1000,
+                            messages: [{
+                                role: 'user',
+                                content: `אנא נתח את התשובות הבאות לשאלון הערכה עצמית:\n\n${fileContent}`
+                            }]
+                        })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    // הצגת התשובה
+                    const aiAnalysisContent = document.getElementById('ai-analysis-content');
+                    aiAnalysisContent.innerHTML = data.content[0].text;
+                    
+                } catch (error) {
+                    console.error('Error getting AI analysis:', error);
+                    showNotification('שגיאה בקבלת הניתוח מבינה מלאכותית');
+                }
+            });
+            
+            // מאזין לכפתור חזרה מהניתוח לשאלון
+            document.getElementById('back-to-questionnaire-from-ai-btn').addEventListener('click', function() {
+                document.getElementById('ai-analysis-panel').classList.add('hidden');
+                questionnairePanel.classList.remove('hidden');
+            });
         });
     </script>
 </body>
