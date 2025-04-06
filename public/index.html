@@ -188,10 +188,10 @@
                     <i class="fas fa-arrow-right ml-1"></i>חזרה לבחירת מצב
                 </button>
             </div>
-            
+
             <div class="card">
                 <h2 class="text-xl font-semibold mb-4">ניהול שאלונים</h2>
-                
+
                 <div class="mb-6">
                     <div class="flex border-b">
                         <div id="new-questionnaire-tab" class="tab active">יצירת שאלון חדש</div>
@@ -200,14 +200,14 @@
                         <div id="export-questionnaire-tab" class="tab">ייצוא לקובץ</div>
                     </div>
                 </div>
-                
+
                 <!-- יצירת שאלון חדש -->
                 <div id="new-questionnaire-panel">
                     <div class="mb-4">
                         <label class="block mb-2 font-medium">כותרת השאלון:</label>
                         <input type="text" id="questionnaire-title" class="input-field" placeholder="הזן כותרת">
                     </div>
-                    
+
                     <div class="mb-4">
                         <label class="block mb-2 font-medium">סוג תצוגה למשתמש:</label>
                         <div class="flex items-center mb-2">
@@ -220,7 +220,7 @@
                         <div id="scale-options" class="hidden mt-4 p-4 bg-gray-50 rounded-md">
                             <h3 class="font-medium mb-2">הגדרת סולם אחיד:</h3>
                             <p class="text-sm text-gray-600 mb-4">הגדר את הערכים שיוצגו למשתמשים בסולם האחיד:</p>
-                            
+
                             <div class="grid grid-cols-1 md:grid-cols-5 gap-2">
                                 <div>
                                     <label class="block text-sm">אפשרות 1:</label>
@@ -245,23 +245,23 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="mb-4">
                         <h3 class="font-medium mb-2">הגדרת פריטים והיגדים:</h3>
                         <p class="text-sm text-gray-600 mb-4">הגדר 20 פריטים, כל אחד עם 5 היגדים לבחירה:</p>
-                        
+
                         <div id="items-accordion">
                             <!-- כאן יתווספו דינמית פריטי השאלון -->
                         </div>
                     </div>
-                    
+
                     <div class="flex justify-end">
                         <button id="save-questionnaire-btn" class="button-primary">
                             <i class="fas fa-save ml-1"></i>שמור הגדרות ויצור קוד שיתוף
                         </button>
                     </div>
                 </div>
-                
+
                 <!-- עריכת שאלון קיים -->
                 <div id="edit-questionnaire-panel" class="hidden">
                     <div class="mb-4">
@@ -275,18 +275,18 @@
                             <div id="recent-codes-list" class="flex flex-wrap gap-2 mt-1"></div>
                         </div>
                     </div>
-                    
+
                     <div id="edit-form-container" class="hidden">
                         <!-- כאן יוצג טופס העריכה לאחר טעינת שאלון קיים -->
                     </div>
                 </div>
-                
+
                 <!-- טעינה מקובץ -->
                 <div id="import-questionnaire-panel" class="hidden">
                     <div class="mb-4">
                         <label class="block mb-2 font-medium">בחר קובץ JSON להעלאה:</label>
                         <input type="file" id="import-file" accept=".json" class="mb-4">
-                        
+
                         <div class="p-4 bg-gray-50 rounded-md mb-4">
                             <h3 class="font-medium mb-2">מבנה קובץ JSON:</h3>
                             <pre class="text-xs overflow-auto bg-gray-100 p-2 rounded">
@@ -305,19 +305,19 @@
 </pre>
                         </div>
                     </div>
-                    
+
                     <div id="import-preview" class="hidden p-4 bg-gray-50 rounded-md mb-4">
                         <h3 class="font-medium mb-2">תצוגה מקדימה:</h3>
                         <div id="import-preview-content"></div>
                     </div>
-                    
+
                     <div class="flex justify-end">
                         <button id="process-import-btn" class="button-primary hidden">
                             <i class="fas fa-file-import ml-1"></i>טען שאלון
                         </button>
                     </div>
                 </div>
-                
+
                 <!-- ייצוא לקובץ -->
                 <div id="export-questionnaire-panel" class="hidden">
                     <div class="mb-4">
@@ -327,12 +327,12 @@
                             <button id="load-for-export-btn" class="button-primary mr-2">טען שאלון לייצוא</button>
                         </div>
                     </div>
-                    
+
                     <div id="export-preview" class="hidden p-4 bg-gray-50 rounded-md mb-4">
                         <h3 class="font-medium mb-2">תצוגה מקדימה של השאלון לייצוא:</h3>
                         <div id="export-preview-content"></div>
                     </div>
-                    
+
                     <div class="flex justify-end">
                         <button id="export-btn" class="button-primary hidden">
                             <i class="fas fa-file-export ml-1"></i>ייצא לקובץ
@@ -340,11 +340,11 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- פאנל שיתוף -->
             <div id="share-panel" class="hidden card">
                 <h2 class="text-xl font-semibold mb-4">שיתוף השאלון</h2>
-                
+
                 <div class="mb-4">
                     <label class="block mb-2 font-medium">קוד שיתוף:</label>
                     <div class="flex">
@@ -354,7 +354,7 @@
                         </button>
                     </div>
                 </div>
-                
+
                 <div class="mb-4">
                     <label class="block mb-2 font-medium">קישור ישיר:</label>
                     <div class="flex">
@@ -364,7 +364,7 @@
                         </button>
                     </div>
                 </div>
-                
+
                 <div class="flex justify-between">
                     <button id="back-to-admin-btn" class="button-secondary">
                         <i class="fas fa-arrow-right ml-1"></i>חזרה לניהול
@@ -375,7 +375,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- מסך טעינת שאלון חד פעמי -->
         <div id="one-time-panel" class="hidden">
             <div class="mb-4">
@@ -383,14 +383,14 @@
                     <i class="fas fa-arrow-right ml-1"></i>חזרה לבחירת מצב
                 </button>
             </div>
-            
+
             <div class="card">
                 <h2 class="text-xl font-semibold mb-4">טעינת שאלון חד פעמי</h2>
-                
+
                 <div class="mb-4">
                     <label class="block mb-2 font-medium">בחר קובץ JSON של השאלון:</label>
                     <input type="file" id="one-time-import-file" accept=".json" class="mb-4">
-                    
+
                     <div class="p-4 bg-gray-50 rounded-md mb-4">
                         <h3 class="font-medium mb-2">מבנה קובץ JSON:</h3>
                         <pre class="text-xs overflow-auto bg-gray-100 p-2 rounded">
@@ -409,12 +409,12 @@
 </pre>
                     </div>
                 </div>
-                
+
                 <div id="one-time-preview" class="hidden p-4 bg-gray-50 rounded-md mb-4">
                     <h3 class="font-medium mb-2">תצוגה מקדימה:</h3>
                     <div id="one-time-preview-content"></div>
                 </div>
-                
+
                 <div class="flex justify-end">
                     <button id="start-one-time-questionnaire-btn" class="button-primary hidden">
                         <i class="fas fa-play ml-1"></i>התחל למלא שאלון
@@ -422,7 +422,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- מסך כניסה לשאלון (כמשתמש) -->
         <div id="user-enter-panel" class="hidden">
             <div class="mb-4">
@@ -430,10 +430,10 @@
                     <i class="fas fa-arrow-right ml-1"></i>חזרה לבחירת מצב
                 </button>
             </div>
-            
+
             <div class="card">
                 <h2 class="text-xl font-semibold mb-4">כניסה לשאלון</h2>
-                
+
                 <div class="mb-4">
                     <label class="block mb-2 font-medium">קוד שיתוף:</label>
                     <div class="flex">
@@ -443,7 +443,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- מסך השאלון עצמו -->
         <div id="questionnaire-panel" class="hidden">
             <div class="mb-4">
@@ -451,10 +451,10 @@
                     <i class="fas fa-arrow-right ml-1"></i>חזרה למסך הכניסה
                 </button>
             </div>
-            
+
             <div class="card">
                 <h2 id="questionnaire-title-display" class="text-xl font-semibold mb-4"></h2>
-                
+
                 <div class="mb-4">
                     <div class="flex justify-between text-sm mb-1">
                         <span>התקדמות:</span>
@@ -464,11 +464,11 @@
                         <div id="progress-bar-fill" class="progress-bar-fill" style="width: 0%;"></div>
                     </div>
                 </div>
-                
+
                 <div id="questionnaire-items-container">
                     <!-- כאן יוצגו פריטי השאלון -->
                 </div>
-                
+
                 <div class="flex justify-between mt-4">
                     <button id="prev-item-btn" class="button-secondary hidden">
                         <i class="fas fa-arrow-right ml-1"></i>הקודם
@@ -485,7 +485,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- מסך ניתוח AI -->
         <div id="ai-analysis-panel" class="hidden">
             <div class="mb-4">
@@ -493,10 +493,10 @@
                     <i class="fas fa-arrow-right ml-1"></i>חזרה לשאלון
                 </button>
             </div>
-            
+
             <div class="card">
                 <h2 class="text-xl font-semibold mb-4">ניתוח מבינה מלאכותית</h2>
-                
+
                 <div id="ai-analysis-content" class="prose max-w-none">
                     <div class="text-center">
                         <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
@@ -505,7 +505,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- מסך שאלון הערכה עצמית -->
         <div id="self-esteem-panel" class="hidden">
             <div class="mb-4">
@@ -513,15 +513,15 @@
                     <i class="fas fa-arrow-right ml-1"></i>חזרה לבחירת מצב
                 </button>
             </div>
-            
+
             <div class="card">
                 <h2 class="text-xl font-semibold mb-4">שאלון הערכה עצמית</h2>
-                
+
                 <div class="mb-4">
                     <p class="text-gray-600 mb-4">שאלון זה נועד להערכת תחושות, מחשבות והתנהגויות הקשורות להערכה עצמית.</p>
                     <p class="text-gray-600 mb-4">אנא ענה בכנות על כל שאלה, תוך התחשבות בתחושותיך הנוכחיות.</p>
                 </div>
-                
+
                 <div class="flex justify-end">
                     <button id="start-self-esteem-btn" class="button-primary">
                         <i class="fas fa-play ml-1"></i>התחל למלא שאלון
@@ -529,13 +529,13 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- הודעת התראה -->
         <div id="notification" class="notification">
             <span id="notification-text"></span>
         </div>
     </div>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // אתחול משתנים גלובליים
@@ -544,10 +544,10 @@
             let currentQuestionnaireData = null;
             let currentItemIndex = 0;
             let userAnswers = Array(NUM_ITEMS).fill(null);
-            
+
             // אחסון קודי שיתוף אחרונים
             let recentCodes = JSON.parse(localStorage.getItem('recentCodes')) || [];
-            
+
             // מצביעים לאלמנטים בדום
             const modeSelection = document.getElementById('mode-selection');
             const adminPanel = document.getElementById('admin-panel');
@@ -556,25 +556,25 @@
             const sharePanel = document.getElementById('share-panel');
             const oneTimePanel = document.getElementById('one-time-panel');
             const selfEsteemPanel = document.getElementById('self-esteem-panel');
-            
+
             const newQuestionnaireTab = document.getElementById('new-questionnaire-tab');
             const editQuestionnaireTab = document.getElementById('edit-questionnaire-tab');
             const importQuestionnaireTab = document.getElementById('import-questionnaire-tab');
             const exportQuestionnaireTab = document.getElementById('export-questionnaire-tab');
-            
+
             const newQuestionnairePanel = document.getElementById('new-questionnaire-panel');
             const editQuestionnairePanel = document.getElementById('edit-questionnaire-panel');
             const importQuestionnairePanel = document.getElementById('import-questionnaire-panel');
             const exportQuestionnairePanel = document.getElementById('export-questionnaire-panel');
-            
+
             const itemsAccordion = document.getElementById('items-accordion');
             const displayModeToggle = document.getElementById('display-mode-toggle');
             const displayModeLabel = document.getElementById('display-mode-label');
             const scaleOptions = document.getElementById('scale-options');
-            
+
             const notification = document.getElementById('notification');
             const notificationText = document.getElementById('notification-text');
-            
+
             // יצירת תוכן ברירת מחדל לפריטים והיגדים
             function createDefaultItems() {
                 const items = [];
@@ -586,7 +586,7 @@
                 }
                 return items;
             }
-            
+
             // יצירת ברירת מחדל לסולם האחיד
             const defaultScaleOptions = [
                 "דומה לחלוטין",
@@ -595,22 +595,22 @@
                 "לא כל כך דומה",
                 "בכלל לא דומה"
             ];
-            
+
             // פונקציה ליצירת פריט אקורדיון
             function createItemAccordion(item, index) {
                 const accordionItem = document.createElement('div');
                 accordionItem.className = 'mb-2 border rounded';
-                
+
                 const header = document.createElement('div');
                 header.className = 'flex justify-between items-center p-3 bg-gray-50 cursor-pointer';
                 header.innerHTML = `
                     <h4 class="font-medium">פריט ${index + 1}</h4>
                     <i class="fas fa-chevron-down"></i>
                 `;
-                
+
                 const content = document.createElement('div');
                 content.className = 'p-3 border-t hidden';
-                
+
                 let contentHtml = `
                     <div class="mb-3">
                         <label class="block mb-1 text-sm font-medium">כותרת/שאלה:</label>
@@ -619,7 +619,7 @@
                     <div>
                         <label class="block mb-1 text-sm font-medium">היגדים לבחירה:</label>
                 `;
-                
+
                 for (let i = 0; i < NUM_OPTIONS; i++) {
                     contentHtml += `
                         <div class="mb-2">
@@ -628,33 +628,33 @@
                         </div>
                     `;
                 }
-                
+
                 content.innerHTML = contentHtml + '</div>';
-                
+
                 accordionItem.appendChild(header);
                 accordionItem.appendChild(content);
-                
+
                 // אירוע לחיצה על הכותרת
                 header.addEventListener('click', function() {
                     const isHidden = content.classList.contains('hidden');
-                    
+
                     // סגירת כל הפריטים הפתוחים
                     const allContents = itemsAccordion.querySelectorAll('.border-t');
                     const allIcons = itemsAccordion.querySelectorAll('.fa-chevron-up');
-                    
+
                     allContents.forEach(cont => cont.classList.add('hidden'));
                     allIcons.forEach(icon => icon.classList.replace('fa-chevron-up', 'fa-chevron-down'));
-                    
+
                     // פתיחת הפריט הנוכחי
                     if (isHidden) {
                         content.classList.remove('hidden');
                         header.querySelector('i').classList.replace('fa-chevron-down', 'fa-chevron-up');
                     }
                 });
-                
+
                 return accordionItem;
             }
-            
+
             // יצירת פריטי אקורדיון ברירת מחדל
             function populateItemsAccordion(items) {
                 itemsAccordion.innerHTML = '';
@@ -663,12 +663,12 @@
                     itemsAccordion.appendChild(accordionItem);
                 });
             }
-            
+
             // איסוף נתוני השאלון מהטופס
             function collectQuestionnaireData() {
                 const title = document.getElementById('questionnaire-title').value || 'שאלון חדש';
                 const displayMode = displayModeToggle.checked ? 'scale' : 'detailed';
-                
+
                 const scaleOptionsArr = [];
                 if (displayMode === 'scale') {
                     for (let i = 1; i <= NUM_OPTIONS; i++) {
@@ -676,20 +676,20 @@
                         scaleOptionsArr.push(option || defaultScaleOptions[i - 1]);
                     }
                 }
-                
+
                 const items = [];
                 for (let i = 0; i < NUM_ITEMS; i++) {
                     const question = document.getElementById(`item-question-${i}`).value || `פריט ${i + 1}`;
                     const options = [];
-                    
+
                     for (let j = 0; j < NUM_OPTIONS; j++) {
                         const option = document.getElementById(`item-option-${i}-${j}`).value || `היגד ${j + 1} לפריט ${i + 1}`;
                         options.push(option);
                     }
-                    
+
                     items.push({ question, options });
                 }
-                
+
                 return {
                     title,
                     displayMode,
@@ -697,17 +697,17 @@
                     items
                 };
             }
-            
+
             // פופולציה של טופס העריכה מנתוני שאלון
             function populateEditForm(data) {
                 const editFormContainer = document.getElementById('edit-form-container');
-                
+
                 let html = `
                     <div class="mb-4">
                         <label class="block mb-2 font-medium">כותרת השאלון:</label>
                         <input type="text" id="edit-questionnaire-title" class="input-field" value="${data.title || ''}">
                     </div>
-                    
+
                     <div class="mb-4">
                         <label class="block mb-2 font-medium">סוג תצוגה למשתמש:</label>
                         <div class="flex items-center mb-2">
@@ -720,10 +720,10 @@
                         <div id="edit-scale-options" class="${data.displayMode === 'scale' ? '' : 'hidden'} mt-4 p-4 bg-gray-50 rounded-md">
                             <h3 class="font-medium mb-2">הגדרת סולם אחיד:</h3>
                             <p class="text-sm text-gray-600 mb-4">הגדר את הערכים שיוצגו למשתמשים בסולם האחיד:</p>
-                            
+
                             <div class="grid grid-cols-1 md:grid-cols-5 gap-2">
                 `;
-                
+
                 for (let i = 0; i < NUM_OPTIONS; i++) {
                     const optionValue = data.scaleOptions && data.scaleOptions[i] ? data.scaleOptions[i] : defaultScaleOptions[i];
                     html += `
@@ -733,19 +733,19 @@
                         </div>
                     `;
                 }
-                
+
                 html += `
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="mb-4">
                         <h3 class="font-medium mb-2">הגדרת פריטים והיגדים:</h3>
                         <p class="text-sm text-gray-600 mb-4">הגדר 20 פריטים, כל אחד עם 5 היגדים לבחירה:</p>
-                        
+
                         <div id="edit-items-accordion">
                 `;
-                
+
                 data.items.forEach((item, index) => {
                     html += `
                         <div class="mb-2 border rounded">
@@ -761,7 +761,7 @@
                                 <div>
                                     <label class="block mb-1 text-sm font-medium">היגדים לבחירה:</label>
                     `;
-                    
+
                     for (let i = 0; i < NUM_OPTIONS; i++) {
                         html += `
                             <div class="mb-2">
@@ -770,41 +770,41 @@
                             </div>
                         `;
                     }
-                    
+
                     html += `
                                 </div>
                             </div>
                         </div>
                     `;
                 });
-                
+
                 html += `
                         </div>
                     </div>
-                    
+
                     <div class="flex justify-end">
                         <button id="update-questionnaire-btn" class="button-primary">
                             <i class="fas fa-save ml-1"></i>שמור שינויים
                         </button>
                     </div>
                 `;
-                
+
                 editFormContainer.innerHTML = html;
                 editFormContainer.classList.remove('hidden');
-                
+
                 // הוספת מאזינים לכותרות האקורדיון
                 document.querySelectorAll('.edit-accordion-header').forEach(header => {
                     header.addEventListener('click', function() {
                         const content = this.nextElementSibling;
                         const isHidden = content.classList.contains('hidden');
-                        
+
                         // סגירת כל הפריטים הפתוחים
                         const allContents = document.querySelectorAll('.edit-accordion-content');
                         const allIcons = document.querySelectorAll('.edit-accordion-header i');
-                        
+
                         allContents.forEach(cont => cont.classList.add('hidden'));
                         allIcons.forEach(icon => icon.classList.replace('fa-chevron-up', 'fa-chevron-down'));
-                        
+
                         // פתיחת הפריט הנוכחי
                         if (isHidden) {
                             content.classList.remove('hidden');
@@ -812,12 +812,12 @@
                         }
                     });
                 });
-                
+
                 // מאזין למתג סוג התצוגה
                 const editDisplayModeToggle = document.getElementById('edit-display-mode-toggle');
                 const editDisplayModeLabel = document.getElementById('edit-display-mode-label');
                 const editScaleOptions = document.getElementById('edit-scale-options');
-                
+
                 editDisplayModeToggle.addEventListener('change', function() {
                     if (this.checked) {
                         editDisplayModeLabel.textContent = 'תצוגת סולם אחיד';
@@ -827,24 +827,24 @@
                         editScaleOptions.classList.add('hidden');
                     }
                 });
-                
+
                 // מאזין לכפתור עדכון
                 document.getElementById('update-questionnaire-btn').addEventListener('click', function() {
                     const updatedData = collectEditedQuestionnaireData();
                     const shareCode = document.getElementById('edit-share-code').value;
-                    
+
                     // שמירת הנתונים המעודכנים
                     localStorage.setItem(`questionnaire_${shareCode}`, JSON.stringify(updatedData));
-                    
+
                     showNotification('השאלון עודכן בהצלחה!');
                 });
             }
-            
+
             // איסוף נתוני השאלון מטופס העריכה
             function collectEditedQuestionnaireData() {
                 const title = document.getElementById('edit-questionnaire-title').value || 'שאלון מעודכן';
                 const displayMode = document.getElementById('edit-display-mode-toggle').checked ? 'scale' : 'detailed';
-                
+
                 const scaleOptionsArr = [];
                 if (displayMode === 'scale') {
                     for (let i = 1; i <= NUM_OPTIONS; i++) {
@@ -852,20 +852,20 @@
                         scaleOptionsArr.push(option || defaultScaleOptions[i - 1]);
                     }
                 }
-                
+
                 const items = [];
                 for (let i = 0; i < NUM_ITEMS; i++) {
                     const question = document.getElementById(`edit-item-question-${i}`).value || `פריט ${i + 1}`;
                     const options = [];
-                    
+
                     for (let j = 0; j < NUM_OPTIONS; j++) {
                         const option = document.getElementById(`edit-item-option-${i}-${j}`).value || `היגד ${j + 1} לפריט ${i + 1}`;
                         options.push(option);
                     }
-                    
+
                     items.push({ question, options });
                 }
-                
+
                 return {
                     title,
                     displayMode,
@@ -873,47 +873,47 @@
                     items
                 };
             }
-            
+
             // יצירת קוד שיתוף אקראי
             function generateShareCode() {
                 return Math.random().toString(36).substring(2, 10);
             }
-            
+
             // הצגת התראה למשתמש
             function showNotification(message) {
                 notificationText.textContent = message;
                 notification.classList.add('show');
-                
+
                 setTimeout(() => {
                     notification.classList.remove('show');
                 }, 3000);
             }
-            
+
             // הוספת קוד שיתוף לרשימת האחרונים
             function addToRecentCodes(code) {
                 // הסרת הקוד אם כבר קיים
                 recentCodes = recentCodes.filter(c => c !== code);
-                
+
                 // הוספת הקוד בתחילת המערך
                 recentCodes.unshift(code);
-                
+
                 // שמירה של עד 5 קודים אחרונים
                 if (recentCodes.length > 5) {
                     recentCodes = recentCodes.slice(0, 5);
                 }
-                
+
                 // שמירה בלוקל סטורג'
                 localStorage.setItem('recentCodes', JSON.stringify(recentCodes));
-                
+
                 // עדכון התצוגה
                 updateRecentCodesList();
             }
-            
+
             // עדכון רשימת הקודים האחרונים בתצוגה
             function updateRecentCodesList() {
                 const recentCodesList = document.getElementById('recent-codes-list');
                 recentCodesList.innerHTML = '';
-                
+
                 recentCodes.forEach(code => {
                     const codeBtn = document.createElement('button');
                     codeBtn.className = 'text-blue-600 hover:underline';
@@ -921,30 +921,30 @@
                     codeBtn.addEventListener('click', function() {
                         document.getElementById('edit-share-code').value = code;
                     });
-                    
+
                     recentCodesList.appendChild(codeBtn);
                 });
             }
-            
+
             // יצירת פריטי השאלון בתצוגת המשתמש
             function createQuestionnaireItems(data) {
                 const container = document.getElementById('questionnaire-items-container');
                 container.innerHTML = '';
-                
+
                 // ריקון תשובות המשתמש
                 userAnswers = Array(NUM_ITEMS).fill(null);
-                
+
                 // עדכון כותרת השאלון
                 document.getElementById('questionnaire-title-display').textContent = data.title;
-                
+
                 // יצירת פריטים
                 data.items.forEach((item, index) => {
                     const itemDiv = document.createElement('div');
                     itemDiv.className = 'questionnaire-item mb-6 p-4 border rounded-md hidden';
                     itemDiv.id = `questionnaire-item-${index}`;
-                    
+
                     let html = `<h3 class="font-medium mb-3">${item.question}</h3>`;
-                    
+
                     // תצוגת היגדים רגילה
                     if (data.displayMode === 'detailed') {
                         item.options.forEach((option, optIndex) => {
@@ -967,10 +967,10 @@
                             `;
                         });
                     }
-                    
+
                     itemDiv.innerHTML = html;
                     container.appendChild(itemDiv);
-                    
+
                     // הוספת מאזיני רדיו
                     itemDiv.querySelectorAll('input[type="radio"]').forEach(radio => {
                         radio.addEventListener('change', function() {
@@ -979,19 +979,19 @@
                         });
                     });
                 });
-                
+
                 // הצגת הפריט הראשון
                 document.getElementById(`questionnaire-item-${0}`).classList.remove('hidden');
             }
-            
+
             // עדכון פס ההתקדמות
             function updateProgressBar() {
                 const answeredCount = userAnswers.filter(ans => ans !== null).length;
                 const progressPercent = (answeredCount / NUM_ITEMS) * 100;
-                
+
                 document.getElementById('progress-bar-fill').style.width = `${progressPercent}%`;
                 document.getElementById('progress-text').textContent = `${answeredCount}/${NUM_ITEMS}`;
-                
+
                 // הפעלת כפתורי ההורדה והניתוח אם הושלם הכל
                 if (answeredCount === NUM_ITEMS) {
                     document.getElementById('download-results-btn').classList.remove('hidden');
@@ -1001,40 +1001,40 @@
                     document.getElementById('ai-analysis-btn').classList.add('hidden');
                 }
             }
-            
+
             // מעבר לפריט הבא או הקודם
             function navigateItems(direction) {
                 // הסתרת הפריט הנוכחי
                 document.getElementById(`questionnaire-item-${currentItemIndex}`).classList.add('hidden');
-                
+
                 // עדכון האינדקס
                 currentItemIndex += direction;
-                
+
                 // הצגת הפריט החדש
                 document.getElementById(`questionnaire-item-${currentItemIndex}`).classList.remove('hidden');
-                
+
                 // עדכון כפתורי הניווט
                 updateNavigationButtons();
             }
-            
+
             // עדכון כפתורי הניווט בשאלון
             function updateNavigationButtons() {
                 const prevBtn = document.getElementById('prev-item-btn');
                 const nextBtn = document.getElementById('next-item-btn');
                 const downloadBtn = document.getElementById('download-results-btn');
                 const aiAnalysisBtn = document.getElementById('ai-analysis-btn');
-                
+
                 // כפתור קודם
                 if (currentItemIndex > 0) {
                     prevBtn.classList.remove('hidden');
                 } else {
                     prevBtn.classList.add('hidden');
                 }
-                
+
                 // כפתור הבא/סיים
                 if (currentItemIndex === NUM_ITEMS - 1) {
                     nextBtn.classList.add('hidden');
-                    
+
                     // הצגת כפתורי הורדה וניתוח אם כל השאלות מולאו
                     if (userAnswers.every(ans => ans !== null)) {
                         downloadBtn.classList.remove('hidden');
@@ -1049,45 +1049,45 @@
                     aiAnalysisBtn.classList.add('hidden');
                 }
             }
-            
+
             // הורדת תוצאות השאלון
             function downloadResults() {
                 if (!userAnswers.every(ans => ans !== null)) {
                     showNotification('נא למלא את כל הפריטים לפני הורדת התוצאות');
                     return;
                 }
-                
+
                 // יצירת תוכן הקובץ
                 let fileContent = `${currentQuestionnaireData.title}\n\n`;
-                
+
                 userAnswers.forEach((answerIndex, itemIndex) => {
                     // הוספת ההיגד שנבחר
                     const selectedOption = currentQuestionnaireData.items[itemIndex].options[answerIndex];
                     fileContent += `${selectedOption}\n`;
                 });
-                
+
                 // יצירת הקובץ והורדתו
                 const blob = new Blob([fileContent], { type: 'text/plain;charset=utf-8' });
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
-                
+
                 a.href = url;
                 a.download = `תוצאות_${currentQuestionnaireData.title.replace(/\s+/g, '_')}.txt`;
                 document.body.appendChild(a);
                 a.click();
-                
+
                 // ניקוי
                 setTimeout(() => {
                     document.body.removeChild(a);
                     URL.revokeObjectURL(url);
                 }, 100);
             }
-            
+
             // אתחול המערכת
             function initializeApp() {
                 // אתחול פריטי השאלון ברירת מחדל
                 populateItemsAccordion(createDefaultItems());
-                
+
                 // מאזין למתג סוג התצוגה
                 displayModeToggle.addEventListener('change', function() {
                     if (this.checked) {
@@ -1098,24 +1098,24 @@
                         scaleOptions.classList.add('hidden');
                     }
                 });
-                
+
                 // עדכון רשימת הקודים האחרונים
                 updateRecentCodesList();
-                
+
                 // מאזיני אירועים למעברים בין מסכים
-                
+
                 // חזרה למסך הבחירה ממסך המנהל
                 document.getElementById('back-to-mode-btn').addEventListener('click', function() {
                     adminPanel.classList.add('hidden');
                     modeSelection.classList.remove('hidden');
                 });
-                
+
                 // מעבר למסך המנהל
                 document.getElementById('admin-mode-btn').addEventListener('click', function() {
                     modeSelection.classList.add('hidden');
                     adminPanel.classList.remove('hidden');
                 });
-                
+
                 // מעבר למסך המשתמש
                 document.getElementById('user-mode-btn').addEventListener('click', function() {
                     modeSelection.classList.add('hidden');
@@ -1133,7 +1133,7 @@
                     modeSelection.classList.add('hidden');
                     oneTimePanel.classList.remove('hidden');
                 });
-                
+
                 // חזרה למסך הבחירה ממסך טעינת שאלון חד פעמי
                 document.getElementById('back-to-mode-from-one-time-btn').addEventListener('click', function() {
                     oneTimePanel.classList.add('hidden');
@@ -1160,23 +1160,23 @@
                         .then(data => {
                             // שמירת הנתונים זמנית
                             currentQuestionnaireData = data;
-                            
+
                             // איפוס מיקום בשאלון
                             currentItemIndex = 0;
-                            
+
                             // יצירת פריטי השאלון
                             createQuestionnaireItems(data);
-                            
+
                             // איפוס פס ההתקדמות
                             updateProgressBar();
-                            
+
                             // עדכון כפתורי הניווט
                             updateNavigationButtons();
-                            
+
                             // מעבר למסך השאלון
                             selfEsteemPanel.classList.add('hidden');
                             questionnairePanel.classList.remove('hidden');
-                            
+
                             showNotification('השאלון נטען בהצלחה');
                         })
                         .catch(error => {
@@ -1184,45 +1184,45 @@
                             showNotification('שגיאה בטעינת השאלון');
                         });
                 });
-                
+
                 // מאזיני אירועים לטאבים
                 newQuestionnaireTab.addEventListener('click', function() {
                     activateTab(this, newQuestionnairePanel);
                 });
-                
+
                 editQuestionnaireTab.addEventListener('click', function() {
                     activateTab(this, editQuestionnairePanel);
                 });
-                
+
                 importQuestionnaireTab.addEventListener('click', function() {
                     activateTab(this, importQuestionnairePanel);
                 });
-                
+
                 exportQuestionnaireTab.addEventListener('click', function() {
                     activateTab(this, exportQuestionnairePanel);
                 });
-                
+
                 // מאזין לכפתור שמירה ויצירת קוד שיתוף
                 document.getElementById('save-questionnaire-btn').addEventListener('click', function() {
                     const questionnaireData = collectQuestionnaireData();
                     const shareCode = generateShareCode();
-                    
+
                     // שמירה בלוקל סטורג'
                     localStorage.setItem(`questionnaire_${shareCode}`, JSON.stringify(questionnaireData));
-                    
+
                     // הוספה לרשימת הקודים האחרונים
                     addToRecentCodes(shareCode);
-                    
+
                     // הצגת פאנל השיתוף
                     document.getElementById('share-code').value = shareCode;
-                    
+
                     const currentUrl = window.location.href.split('?')[0];
                     document.getElementById('share-link').value = `${currentUrl}?code=${shareCode}`;
-                    
+
                     adminPanel.classList.add('hidden');
                     sharePanel.classList.remove('hidden');
                 });
-                
+
                 // מאזין לכפתור העתקת קוד
                 document.getElementById('copy-code-btn').addEventListener('click', function() {
                     const shareCode = document.getElementById('share-code');
@@ -1230,7 +1230,7 @@
                     document.execCommand('copy');
                     showNotification('הקוד הועתק ללוח');
                 });
-                
+
                 // מאזין לכפתור העתקת קישור
                 document.getElementById('copy-link-btn').addEventListener('click', function() {
                     const shareLink = document.getElementById('share-link');
@@ -1238,7 +1238,7 @@
                     document.execCommand('copy');
                     showNotification('הקישור הועתק ללוח');
                 });
-                
+
                 // מאזין לכפתור טעינת שאלון לעריכה
                 document.getElementById('load-for-edit-btn').addEventListener('click', function() {
                     const shareCode = document.getElementById('edit-share-code').value;
@@ -1246,43 +1246,43 @@
                         showNotification('נא להזין קוד שיתוף');
                         return;
                     }
-                    
+
                     const questionnaireData = localStorage.getItem(`questionnaire_${shareCode}`);
                     if (!questionnaireData) {
                         showNotification('לא נמצא שאלון עם הקוד שהוזן');
                         return;
                     }
-                    
+
                     // טעינת הנתונים לטופס העריכה
                     const data = JSON.parse(questionnaireData);
                     populateEditForm(data);
-                    
+
                     // הוספה לרשימת הקודים האחרונים
                     addToRecentCodes(shareCode);
                 });
-                
+
                 // מאזין להעלאת קובץ
                 document.getElementById('import-file').addEventListener('change', function(e) {
                     const file = e.target.files[0];
                     if (!file) return;
-                    
+
                     const reader = new FileReader();
                     reader.onload = function(e) {
                         try {
                             const data = JSON.parse(e.target.result);
-                            
+
                             // בדיקת תקינות מבנה הקובץ
                             if (!validateQuestionnaireData(data)) {
                                 showNotification('מבנה הקובץ אינו תקין');
                                 return;
                             }
-                            
+
                             // הצגת תצוגה מקדימה
                             displayImportPreview(data);
-                            
+
                             // הצגת כפתור הטעינה
                             document.getElementById('process-import-btn').classList.remove('hidden');
-                            
+
                         } catch (err) {
                             console.error(err);
                             showNotification('שגיאה בטעינת הקובץ');
@@ -1293,7 +1293,7 @@
                     };
                     reader.readAsText(file);
                 });
-                
+
                 // מאזין לכפתור טעינת שאלון לעריכה
                 document.getElementById('process-import-btn').addEventListener('click', function() {
                     const importPreviewContent = document.getElementById('import-preview-content');
@@ -1304,38 +1304,38 @@
 
                     try {
                         const data = JSON.parse(importPreviewContent.dataset.questionnaireData);
-                        
+
                         // יצירת קוד שיתוף חדש
                         const shareCode = generateShareCode();
-                        
+
                         // שמירה בלוקל סטורג'
                         localStorage.setItem(`questionnaire_${shareCode}`, JSON.stringify(data));
-                        
+
                         // הוספה לרשימת הקודים האחרונים
                         addToRecentCodes(shareCode);
-                        
+
                         // הצגת פאנל השיתוף
                         document.getElementById('share-code').value = shareCode;
-                        
+
                         const currentUrl = window.location.href.split('?')[0];
                         document.getElementById('share-link').value = `${currentUrl}?code=${shareCode}`;
-                        
+
                         // הסתרת פאנל המנהל והצגת פאנל השיתוף
                         adminPanel.classList.add('hidden');
                         sharePanel.classList.remove('hidden');
-                        
+
                         // איפוס תצוגת הייבוא
                         document.getElementById('import-file').value = '';
                         document.getElementById('import-preview').classList.add('hidden');
                         document.getElementById('process-import-btn').classList.add('hidden');
-                        
+
                         showNotification('השאלון נטען בהצלחה');
                     } catch (err) {
                         console.error(err);
                         showNotification('שגיאה בעיבוד נתוני השאלון');
                     }
                 });
-                
+
                 // מאזין לכפתור טעינת שאלון לייצוא
                 document.getElementById('load-for-export-btn').addEventListener('click', function() {
                     const shareCode = document.getElementById('export-share-code').value;
@@ -1343,49 +1343,49 @@
                         showNotification('נא להזין קוד שיתוף');
                         return;
                     }
-                    
+
                     const questionnaireData = localStorage.getItem(`questionnaire_${shareCode}`);
                     if (!questionnaireData) {
                         showNotification('לא נמצא שאלון עם הקוד שהוזן');
                         return;
                     }
-                    
+
                     // הצגת תצוגה מקדימה
                     const data = JSON.parse(questionnaireData);
                     displayExportPreview(data);
-                    
+
                     // הצגת כפתור הייצוא
                     document.getElementById('export-btn').classList.remove('hidden');
-                    
+
                     // הוספה לרשימת הקודים האחרונים
                     addToRecentCodes(shareCode);
                 });
-                
+
                 // מאזין לכפתור ייצוא לקובץ
                 document.getElementById('export-btn').addEventListener('click', function() {
                     const exportPreviewContent = document.getElementById('export-preview-content');
                     const data = JSON.parse(exportPreviewContent.dataset.questionnaireData);
-                    
+
                     // יצירת הקובץ והורדתו
                     const jsonString = JSON.stringify(data, null, 2);
                     const blob = new Blob([jsonString], { type: 'application/json' });
                     const url = URL.createObjectURL(blob);
                     const a = document.createElement('a');
-                    
+
                     a.href = url;
                     a.download = `${data.title.replace(/\s+/g, '_')}.json`;
                     document.body.appendChild(a);
                     a.click();
-                    
+
                     // ניקוי
                     setTimeout(() => {
                         document.body.removeChild(a);
                         URL.revokeObjectURL(url);
                     }, 100);
-                    
+
                     showNotification('הקובץ הורד בהצלחה');
                 });
-                
+
                 // מאזין לכפתור כניסה לשאלון
                 document.getElementById('enter-questionnaire-btn').addEventListener('click', function() {
                     const shareCode = document.getElementById('user-share-code').value;
@@ -1393,122 +1393,122 @@
                         showNotification('נא להזין קוד שיתוף');
                         return;
                     }
-                    
+
                     // טעינת השאלון
                     if (loadQuestionnaire(shareCode)) {
                         userEnterPanel.classList.add('hidden');
                         questionnairePanel.classList.remove('hidden');
                     }
                 });
-                
+
                 // מאזינים לכפתורי ניווט בשאלון
                 document.getElementById('prev-item-btn').addEventListener('click', function() {
                     navigateItems(-1);
                 });
-                
+
                 document.getElementById('next-item-btn').addEventListener('click', function() {
                     navigateItems(1);
                 });
-                
+
                 document.getElementById('download-results-btn').addEventListener('click', function() {
                     downloadResults();
                 });
-                
+
                 // מאזין לכפתור חזרה למסך הכניסה
                 document.getElementById('back-to-user-enter-btn').addEventListener('click', function() {
                     questionnairePanel.classList.add('hidden');
                     userEnterPanel.classList.remove('hidden');
                 });
-                
+
                 // בדיקה אם יש קוד בפרמטרים של הURL
                 checkUrlForShareCode();
             }
-            
+
             // פונקציה להפעלת טאב
             function activateTab(tabElement, panelElement) {
                 // הסרת הקלאס אקטיב מכל הטאבים
                 document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-                
+
                 // הוספת הקלאס אקטיב לטאב הנוכחי
                 tabElement.classList.add('active');
-                
+
                 // הסתרת כל הפאנלים
                 document.getElementById('new-questionnaire-panel').classList.add('hidden');
                 document.getElementById('edit-questionnaire-panel').classList.add('hidden');
                 document.getElementById('import-questionnaire-panel').classList.add('hidden');
                 document.getElementById('export-questionnaire-panel').classList.add('hidden');
-                
+
                 // הצגת הפאנל המתאים
                 panelElement.classList.remove('hidden');
             }
-            
+
             // בדיקת תקינות מבנה הקובץ
             function validateQuestionnaireData(data) {
                 if (!data.title || !data.items || !Array.isArray(data.items)) {
                     return false;
                 }
-                
+
                 if (data.items.length !== NUM_ITEMS) {
                     return false;
                 }
-                
+
                 for (const item of data.items) {
                     if (!item.question || !item.options || !Array.isArray(item.options) || item.options.length !== NUM_OPTIONS) {
                         return false;
                     }
                 }
-                
+
                 if (data.displayMode === 'scale' && (!data.scaleOptions || !Array.isArray(data.scaleOptions) || data.scaleOptions.length !== NUM_OPTIONS)) {
                     return false;
                 }
-                
+
                 return true;
             }
-            
+
             // הצגת תצוגה מקדימה לקובץ מיובא
             function displayImportPreview(data) {
                 const previewElement = document.getElementById('import-preview');
                 const previewContent = document.getElementById('import-preview-content');
-                
+
                 let html = `
                     <div class="mb-2"><strong>כותרת:</strong> ${data.title}</div>
                     <div class="mb-2"><strong>סוג תצוגה:</strong> ${data.displayMode === 'scale' ? 'סולם אחיד' : 'היגדים מפורטים'}</div>
                 `;
-                
+
                 if (data.displayMode === 'scale') {
                     html += `<div class="mb-2"><strong>אפשרויות סולם:</strong> ${data.scaleOptions.join(', ')}</div>`;
                 }
-                
+
                 html += `<div class="mb-2"><strong>מספר פריטים:</strong> ${data.items.length}</div>`;
-                
+
                 previewContent.innerHTML = html;
                 previewContent.dataset.questionnaireData = JSON.stringify(data);
-                
+
                 previewElement.classList.remove('hidden');
             }
-            
+
             // הצגת תצוגה מקדימה לשאלון לייצוא
             function displayExportPreview(data) {
                 const previewElement = document.getElementById('export-preview');
                 const previewContent = document.getElementById('export-preview-content');
-                
+
                 let html = `
                     <div class="mb-2"><strong>כותרת:</strong> ${data.title}</div>
                     <div class="mb-2"><strong>סוג תצוגה:</strong> ${data.displayMode === 'scale' ? 'סולם אחיד' : 'היגדים מפורטים'}</div>
                 `;
-                
+
                 if (data.displayMode === 'scale') {
                     html += `<div class="mb-2"><strong>אפשרויות סולם:</strong> ${data.scaleOptions.join(', ')}</div>`;
                 }
-                
+
                 html += `<div class="mb-2"><strong>מספר פריטים:</strong> ${data.items.length}</div>`;
-                
+
                 previewContent.innerHTML = html;
                 previewContent.dataset.questionnaireData = JSON.stringify(data);
-                
+
                 previewElement.classList.remove('hidden');
             }
-            
+
             // טעינת שאלון לפי קוד שיתוף
             function loadQuestionnaire(shareCode) {
                 const questionnaireData = localStorage.getItem(`questionnaire_${shareCode}`);
@@ -1516,34 +1516,34 @@
                     showNotification('לא נמצא שאלון עם הקוד שהוזן');
                     return false;
                 }
-                
+
                 // טעינת הנתונים
                 currentQuestionnaireData = JSON.parse(questionnaireData);
-                
+
                 // איפוס מיקום בשאלון
                 currentItemIndex = 0;
-                
+
                 // יצירת פריטי השאלון
                 createQuestionnaireItems(currentQuestionnaireData);
-                
+
                 // איפוס פס ההתקדמות
                 updateProgressBar();
-                
+
                 // עדכון כפתורי הניווט
                 updateNavigationButtons();
-                
+
                 return true;
             }
-            
+
             // בדיקה אם יש קוד בפרמטרים של הURL
             function checkUrlForShareCode() {
                 const urlParams = new URLSearchParams(window.location.search);
                 const shareCode = urlParams.get('code');
-                
+
                 if (shareCode) {
                     // אם יש קוד, להיכנס ישירות למצב מילוי שאלון
                     document.getElementById('user-share-code').value = shareCode;
-                    
+
                     // טעינת השאלון
                     if (loadQuestionnaire(shareCode)) {
                         modeSelection.classList.add('hidden');
@@ -1551,26 +1551,26 @@
                     }
                 }
             }
-            
+
             // הצגת תצוגה מקדימה לשאלון חד פעמי
             function displayOneTimePreview(data) {
                 const previewElement = document.getElementById('one-time-preview');
                 const previewContent = document.getElementById('one-time-preview-content');
-                
+
                 let html = `
                     <div class="mb-2"><strong>כותרת:</strong> ${data.title}</div>
                     <div class="mb-2"><strong>סוג תצוגה:</strong> ${data.displayMode === 'scale' ? 'סולם אחיד' : 'היגדים מפורטים'}</div>
                 `;
-                
+
                 if (data.displayMode === 'scale') {
                     html += `<div class="mb-2"><strong>אפשרויות סולם:</strong> ${data.scaleOptions.join(', ')}</div>`;
                 }
-                
+
                 html += `<div class="mb-2"><strong>מספר פריטים:</strong> ${data.items.length}</div>`;
-                
+
                 previewContent.innerHTML = html;
                 previewContent.dataset.questionnaireData = JSON.stringify(data);
-                
+
                 previewElement.classList.remove('hidden');
             }
 
@@ -1578,25 +1578,25 @@
             document.getElementById('one-time-import-file').addEventListener('change', function(e) {
                 const file = e.target.files[0];
                 if (!file) return;
-                
+
                 const reader = new FileReader();
                 reader.onload = function(e) {
                     try {
                         const data = JSON.parse(e.target.result);
-                        
+
                         // בדיקת תקינות מבנה הקובץ
                         if (!validateQuestionnaireData(data)) {
                             showNotification('מבנה הקובץ אינו תקין');
                             return;
                         }
-                        
+
                         // הצגת תצוגה מקדימה
                         displayOneTimePreview(data);
-                        
+
                         // הצגת כפתור התחלת השאלון
                         const startButton = document.getElementById('start-one-time-questionnaire-btn');
                         startButton.classList.remove('hidden');
-                        
+
                     } catch (err) {
                         console.error(err);
                         showNotification('שגיאה בטעינת הקובץ');
@@ -1618,56 +1618,56 @@
 
                 try {
                     const data = JSON.parse(previewContent.dataset.questionnaireData);
-                    
+
                     // שמירת הנתונים זמנית
                     currentQuestionnaireData = data;
-                    
+
                     // איפוס מיקום בשאלון
                     currentItemIndex = 0;
-                    
+
                     // יצירת פריטי השאלון
                     createQuestionnaireItems(data);
-                    
+
                     // איפוס פס ההתקדמות
                     updateProgressBar();
-                    
+
                     // עדכון כפתורי הניווט
                     updateNavigationButtons();
-                    
+
                     // מעבר למסך השאלון
                     oneTimePanel.classList.add('hidden');
                     questionnairePanel.classList.remove('hidden');
-                    
+
                     showNotification('השאלון נטען בהצלחה');
                 } catch (err) {
                     console.error(err);
                     showNotification('שגיאה בעיבוד נתוני השאלון');
                 }
             });
-            
+
             // מאזין להעלאת קובץ חד פעמי
             document.getElementById('one-time-import-file').addEventListener('change', function(e) {
                 const file = e.target.files[0];
                 if (!file) return;
-                
+
                 const reader = new FileReader();
                 reader.onload = function(e) {
                     try {
                         const data = JSON.parse(e.target.result);
-                        
+
                         // בדיקת תקינות מבנה הקובץ
                         if (!validateQuestionnaireData(data)) {
                             showNotification('מבנה הקובץ אינו תקין');
                             return;
                         }
-                        
+
                         // הצגת תצוגה מקדימה
                         displayOneTimePreview(data);
-                        
+
                         // הצגת כפתור התחלת השאלון
                         const startButton = document.getElementById('start-one-time-questionnaire-btn');
                         startButton.classList.remove('hidden');
-                        
+
                     } catch (err) {
                         console.error(err);
                         showNotification('שגיאה בטעינת הקובץ');
@@ -1689,87 +1689,80 @@
 
                 try {
                     const data = JSON.parse(previewContent.dataset.questionnaireData);
-                    
+
                     // שמירת הנתונים זמנית
                     currentQuestionnaireData = data;
-                    
+
                     // איפוס מיקום בשאלון
                     currentItemIndex = 0;
-                    
+
                     // יצירת פריטי השאלון
                     createQuestionnaireItems(data);
-                    
+
                     // איפוס פס ההתקדמות
                     updateProgressBar();
-                    
+
                     // עדכון כפתורי הניווט
                     updateNavigationButtons();
-                    
+
                     // מעבר למסך השאלון
                     oneTimePanel.classList.add('hidden');
                     questionnairePanel.classList.remove('hidden');
-                    
+
                     showNotification('השאלון נטען בהצלחה');
                 } catch (err) {
                     console.error(err);
                     showNotification('שגיאה בעיבוד נתוני השאלון');
                 }
             });
-            
+
             // אתחול
             initializeApp();
-            
+
             // מאזין לכפתור ניתוח AI
             document.getElementById('ai-analysis-btn').addEventListener('click', async function() {
                 if (!userAnswers.every(ans => ans !== null)) {
                     showNotification('נא למלא את כל הפריטים לפני קבלת ניתוח');
                     return;
                 }
-                
+
                 // יצירת תוכן הקובץ
                 let fileContent = `${currentQuestionnaireData.title}\n\n`;
-                
+
                 userAnswers.forEach((answerIndex, itemIndex) => {
                     // הוספת ההיגד שנבחר
                     const selectedOption = currentQuestionnaireData.items[itemIndex].options[answerIndex];
                     fileContent += `${selectedOption}\n`;
                 });
-                
+
                 // מעבר למסך הניתוח
                 questionnairePanel.classList.add('hidden');
                 document.getElementById('ai-analysis-panel').classList.remove('hidden');
-                
+
                 try {
-                    // שליחת הנתונים ל-Claude
-                    const response = await fetch('https://api.anthropic.com/v1/messages', {
+                    // שליחת הנתונים לשרת שלנו במקום ישירות ל-Claude
+                    const response = await fetch('/api/analyze', {
                         method: 'POST',
                         headers: {
-                            'Content-Type': 'application/json',
-                            'x-api-key': 'YOUR_ANTHROPIC_API_KEY', // יש להחליף במפתח API אמיתי
-                            'anthropic-version': '2023-06-01'
+                            'Content-Type': 'application/json'
                         },
                         body: JSON.stringify({
-                            model: 'claude-3-sonnet-20240229',
-                            max_tokens: 1000,
-                            messages: [{
-                                role: 'user',
-                                content: `אנא נתח את התשובות הבאות לשאלון הערכה עצמית:\n\n${fileContent}`
-                            }]
+                            content: fileContent
                         })
                     });
-                    
+
                     const data = await response.json();
-                    
+
                     // הצגת התשובה
                     const aiAnalysisContent = document.getElementById('ai-analysis-content');
                     aiAnalysisContent.innerHTML = data.content[0].text;
-                    
+
                 } catch (error) {
                     console.error('Error getting AI analysis:', error);
                     showNotification('שגיאה בקבלת הניתוח מבינה מלאכותית');
                 }
             });
-            
+
             // מאזין לכפתור חזרה מהניתוח לשאלון
             document.getElementById('back-to-questionnaire-from-ai-btn').addEventListener('click', function() {
                 document.getElementById('ai-analysis-panel').classList.add('hidden');
